@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="pdaa.learning.mycalendar.CalendarViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/resumen_del_evento"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.12" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tipo_de_evento"
+            app:layout_constraintBaseline_toBaselineOf="@+id/eventKind"
+            app:layout_constraintStart_toStartOf="@+id/allDayTitle" />
+
+        <TextView
+            android:id="@+id/eventName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nombre_del_evento_resumen"
+            app:layout_constraintBaseline_toBaselineOf="@+id/name"
+            app:layout_constraintStart_toStartOf="@+id/allDayTitle" />
+
+        <TextView
+            android:id="@+id/startDateTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fecha_de_inicio_resume"
+            app:layout_constraintBaseline_toBaselineOf="@+id/startDate"
+            app:layout_constraintStart_toStartOf="@+id/allDayTitle" />
+
+        <TextView
+            android:id="@+id/endDateTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fecha_de_fin_resumen"
+            app:layout_constraintBaseline_toBaselineOf="@+id/endDate"
+            app:layout_constraintStart_toStartOf="@+id/allDayTitle" />
+
+        <TextView
+            android:id="@+id/allDayTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/duraci_n_de_todo_el_d_a_resumen"
+            app:layout_constraintBaseline_toBaselineOf="@+id/allDay"
+            app:layout_constraintEnd_toStartOf="@+id/guideline" />
+
+        <TextView
+            android:id="@+id/descriptionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/descripci_n_resumen"
+            app:layout_constraintBaseline_toBaselineOf="@+id/description"
+            app:layout_constraintStart_toStartOf="@+id/allDayTitle" />
+
+        <TextView
+            android:id="@+id/eventKind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/name"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            android:text="@{viewModel.recordOnDetails.kind.toString()}"
+            tools:text="Your text here" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/startDate"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/eventKind"
+            android:text="@{viewModel.recordOnDetails.title}"
+            tools:text="Your text here" />
+
+        <TextView
+            android:id="@+id/startDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/endDate"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            android:text="@{viewModel.recordOnDetails.startDate}"
+            tools:text="Your text here" />
+
+        <TextView
+            android:id="@+id/endDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/allDay"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/startDate"
+            android:text="@{viewModel.recordOnDetails.endDate}"
+            tools:text="Your text here" />
+
+        <TextView
+            android:id="@+id/allDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/description"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/endDate"
+            app:bindIsTheEventAllDay="@{viewModel.recordOnDetails.fullDay}"
+            tools:text="Your text here" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="196dp"
+            android:layout_height="76dp"
+            android:text="@{viewModel.recordOnDetails.description}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/allDay"
+            tools:text="Your text here" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

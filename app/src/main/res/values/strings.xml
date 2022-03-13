@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MyCalendar</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_new_date_title">Agregue los datos del nuevo evento</string>
+    <string name="tipo_de_evento_title">Tipo de evento</string>
+    <string name="agregar_nuevo_registro">agregar nuevo registro</string>
+    <string name="nombre_del_evento">Nombre del evento</string>
+    <string name="fecha_de_inicio">Fecha de inicio</string>
+    <string name="fecha_de_finalizaci_n">Fecha de finalización</string>
+    <string name="ingresar_fecha">Ingresar Fecha</string>
+    <string name="ingresar_hora">Ingresar Hora</string>
+    <string name="descripci_n">Descripción</string>
+    <string name="el_evento_durar_todo_el_d_a">¿El evento durará todo el día?</string>
+    <string name="resumen_de_su_nuevo_evento">Resumen de su nuevo evento</string>
+    <string name="tipo_de_evento">Tipo de evento:</string>
+    <string name="nombre_del_evento_resumen">Nombre del evento:</string>
+    <string name="fecha_de_inicio_resume">Fecha de inicio:</string>
+    <string name="fecha_de_fin_resumen">Fecha de fin:</string>
+    <string name="duraci_n_de_todo_el_d_a_resumen">Duración de todo el día:</string>
+    <string name="descripci_n_resumen">Descripción:</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="resumen_del_evento">Resumen del evento</string>
+</resources>
